@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64.23" height="104.961" viewBox="0 0 64.23 104.961">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="64.23" height="104.961" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="반복_그리드_7" data-name="반복 그리드 7" clip-path="url(#clip-path)">
+    <g id="그룹_20470" data-name="그룹 20470" transform="translate(-4345.971 -1094.135)">
+      <path id="패스_30119" data-name="패스 30119" d="M4345.971,1094.135l32.116,104.961V1120.27Z" fill="#423e3e"/>
+      <path id="패스_30120" data-name="패스 30120" d="M4378.087,1120.27V1199.1l32.115-104.961Z" fill="#2b2929"/>
+    </g>
+  </g>
+</svg>
