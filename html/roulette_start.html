@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>경제금융교육존</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=medium-dpi"  name="viewport" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="../css/font.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="all" />
+    <!-- js -->
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script>
+       var _btnStart;
+            var _roll_bg;
+            var _items;
+            var _mTime;
+            function init()
+            {
+                create();
+                addEvent();
+            }
+
+            function create()
+            {
+                _btnStart = $( ".start_btn" );
+                _roll_bg = $( ".roulette" );
+                _items = [ "하트 5개 획득", "키워드 첫번째 OX퀴즈", "하트 1개 획득", "키워드 4번째 OX퀴즈", "한번 더!", "키워드 세번째 OX퀴즈", "키워드 두번째 OX퀴즈", "다음기회에 꽝!" ];
+                _mTime = 2;
+            }
+
+            function addEvent()
+            {
+                _btnStart.on( "click", function() {
+                    btnStartClick();
+                    _btnStart.attr('disabled',true);
+                } );
+
+            }
+
+            function btnStartClick( $e )
+            {
+                spinMotion();
+            }
+
+            var _count = 0;
+            //움직이는 모션
+            function spinMotion()
+            {
+                TweenMax.to( _roll_bg, _mTime, { rotation:360 * 4, ease:Linear .easeNone, onComplete:function(){
+                    TweenMax.set( _roll_bg, { rotation:0 });
+                    _count ++;
+                    if( _count > 0 ){
+                        randomValue();
+                        return;
+                    }
+                    spinMotion();
+                }});
+            }
+            //결과값 추출
+            function randomValue(){
+                var ran = parseInt( Math.random() * _items.length );
+                angleCount( ran );
+            }
+            //결과값 맞게 움직이는 모션
+            function angleCount( $ran )
+            {
+                TweenMax.killTweensOf( _roll_bg );
+                TweenMax.set( _roll_bg, { rotation:0 });
+
+                var angle = 360 / _items.length;
+                console.log($ran*angle);
+                TweenMax.to( _roll_bg, _mTime, { rotation: $ran * angle , ease:Linear.easeNone, onComplete:function(){
+                    console.log( _items[ $ran ] + " 당첨 되었습니다" );
+                    _btnStart.attr('disabled',false);
+                }});
+            }
+
+            $( document ).ready( function(){
+                init();
+            });
+    </script>
+    
+</head>
+<body>
+    <div class="roulette_event">
+        <h1 class="logo_box"><img src="../img/event/logo_econoland.svg" alt="이코노랜드"></h1>
+        <h2 class="event_tit">룰렛 퀴즈!</h2>
+        <div class="roulette_wrap">
+            <div class="white_bg">
+                <span class="pin"><img src="../img/event/pin.svg" alt="" /></span>
+                <div class="roulette"><img src="../img/event/roulette.svg" alt="" /></div>
+                <button type="button" class="start_btn">돌리기</button>
+            </div>
+        </div>
+    </div>
+</html>

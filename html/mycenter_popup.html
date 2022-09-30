@@ -42,6 +42,7 @@
                             <span class="chk icon_gender2"><input type="radio" id="rdo1_2" name="rdo1"> <label for="rdo1_2">여자</label></span>
                         </li>
                     </ul>
+
                     <h3>02. 나이를 선택하세요.</h3>
                     <ul class="check_list">
                         <li>
@@ -63,6 +64,7 @@
                             <span class="chk icon_age6"><input type="radio" id="rdo2_6" name="rdo2"> <label for="rdo2_6">20세 이상</label></span>
                         </li>
                     </ul>
+
                     <h3>03. 본인이 관심있는 경제·금융교육 키워드를 선택해주세요. <span>(최대 2개까지 선택가능)</span></h3>
                     <ul class="check_list">
                         <li>
@@ -126,4 +128,53 @@
         </div>
 		<!-- //container -->
     </div>
+
+    <!-- 이벤트안내 팝업 -->
+    <div class="popup_wrap popup_mycenter" style="display: block;">
+        <div class="popup">
+            <button type="button" class="pop_close" onclick="close_pop(this); return false"><img src="../img/event/btn_close.svg" alt="" /></button>
+            <div class="popup_cont">
+                <div class="mycenter_top">
+                    <div class="top_inner">
+                        <h2 class="pop_title">나에게 <span class=fc_blue>딱</span> 맞는<br /><span class="fc_yellow">경제·금융교육기관</span>을 찾았습니다!</h2>
+                        <dl>
+                            <dt>내가 선택한 키워드</dt>
+                            <dd>
+                                <span class="keyword b_round">경제정보제공</span>
+                                <span class="keyword b_round">금융상품</span>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="mycenter_mid">
+                    <ul class="link_list">
+                        <li>
+                            <div class="pic"><img src="../img/event/s_logo1.svg" alt="매일경제신문" /></div>
+                            <strong>매일경제신문</strong>
+                            <a href="#none" target="_blank" class="b_round">방문하기</a>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="../img/event/s_logo2.svg" alt="파이낸셜뉴스" /></div>
+                            <strong>파이낸셜뉴스</strong>
+                            <a href="#none" target="_blank" class="b_round">방문하기</a>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="../img/event/s_logo3.svg" alt="신한은행" /></div>
+                            <strong>신한은행</strong>
+                            <a href="#none" target="_blank" class="b_round">방문하기</a>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="../img/event/s_logo4.svg" alt="하나금융지주" /></div>
+                            <strong>하나금융지주</strong>
+                            <a href="#none" target="_blank" class="b_round">방문하기</a>
+                        </li>
+                    </ul>
+                    <div class="btm">
+                        <button type="button" class="btn_back ty_s">처음으로</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //이벤트안내 팝업 -->
 </html>
